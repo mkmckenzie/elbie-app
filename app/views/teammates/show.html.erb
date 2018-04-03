@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @teammate.name %>
+</p>
+
+<p>
+  <strong>B:</strong>
+  <%= @teammate.b %>
+</p>
+
+<p>
+  <strong>Primary phone:</strong>
+  <%= @teammate.primary_phone %>
+</p>
+
+<p>
+  <strong>Secondary phone:</strong>
+  <%= @teammate.secondary_phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @teammate.website %>
+</p>
+
+<p>
+  <strong>Instagram handle:</strong>
+  <%= @teammate.instagram_handle %>
+</p>
+
+<p>
+  <strong>Visit count:</strong>
+  <%= @teammate.visit_count %>
+</p>
+
+<p>
+  <strong>Venmo handle:</strong>
+  <%= @teammate.venmo_handle %>
+</p>
+
+<p>
+  <strong>Facebook page:</strong>
+  <%= @teammate.facebook_page %>
+</p>
+
+<p>
+  <strong>Claimed flag:</strong>
+  <%= @teammate.claimed_flag %>
+</p>
+
+<p>
+  <strong>Brand summary:</strong>
+  <%= @teammate.brand_summary %>
+</p>
+
+<%= link_to 'Edit', edit_teammate_path(@teammate) %> |
+<%= link_to 'Back', teammates_path %>

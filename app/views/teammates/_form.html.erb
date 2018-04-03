@@ -1,0 +1,72 @@
+<%= form_with(model: teammate, local: true) do |form| %>
+  <% if teammate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(teammate.errors.count, "error") %> prohibited this teammate from being saved:</h2>
+
+      <ul>
+      <% teammate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :teammate_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b %>
+    <%= form.text_field :b, id: :teammate_b %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_phone %>
+    <%= form.text_field :primary_phone, id: :teammate_primary_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secondary_phone %>
+    <%= form.text_field :secondary_phone, id: :teammate_secondary_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website, id: :teammate_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instagram_handle %>
+    <%= form.text_field :instagram_handle, id: :teammate_instagram_handle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visit_count %>
+    <%= form.number_field :visit_count, id: :teammate_visit_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :venmo_handle %>
+    <%= form.text_field :venmo_handle, id: :teammate_venmo_handle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook_page %>
+    <%= form.text_field :facebook_page, id: :teammate_facebook_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :claimed_flag %>
+    <%= form.number_field :claimed_flag, id: :teammate_claimed_flag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand_summary %>
+    <%= form.text_area :brand_summary, id: :teammate_brand_summary %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

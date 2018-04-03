@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teammates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>B</th>
+      <th>Primary phone</th>
+      <th>Secondary phone</th>
+      <th>Website</th>
+      <th>Instagram handle</th>
+      <th>Visit count</th>
+      <th>Venmo handle</th>
+      <th>Facebook page</th>
+      <th>Claimed flag</th>
+      <th>Brand summary</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teammates.each do |teammate| %>
+      <tr>
+        <td><%= teammate.name %></td>
+        <td><%= teammate.b %></td>
+        <td><%= teammate.primary_phone %></td>
+        <td><%= teammate.secondary_phone %></td>
+        <td><%= teammate.website %></td>
+        <td><%= teammate.instagram_handle %></td>
+        <td><%= teammate.visit_count %></td>
+        <td><%= teammate.venmo_handle %></td>
+        <td><%= teammate.facebook_page %></td>
+        <td><%= teammate.claimed_flag %></td>
+        <td><%= teammate.brand_summary %></td>
+        <td><%= link_to 'Show', teammate %></td>
+        <td><%= link_to 'Edit', edit_teammate_path(teammate) %></td>
+        <td><%= link_to 'Destroy', teammate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Teammate', new_teammate_path %>

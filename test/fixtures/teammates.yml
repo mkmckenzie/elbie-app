@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  b: MyString
+  primary_phone: MyString
+  secondary_phone: MyString
+  website: MyString
+  instagram_handle: MyString
+  visit_count: 1
+  venmo_handle: MyString
+  facebook_page: MyString
+  claimed_flag: 1
+  brand_summary: MyText
+
+two:
+  name: MyString
+  b: MyString
+  primary_phone: MyString
+  secondary_phone: MyString
+  website: MyString
+  instagram_handle: MyString
+  visit_count: 1
+  venmo_handle: MyString
+  facebook_page: MyString
+  claimed_flag: 1
+  brand_summary: MyText
