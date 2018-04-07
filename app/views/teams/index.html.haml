@@ -1,0 +1,25 @@
+%p#notice= notice
+%h1 My Teams
+.new-team
+  = link_to 'New Team', new_team_path, class: 'btn btn-primary'
+- @teams.each do |team|
+  .team.border.border-primary.p-3.my-3
+    %h5= link_to team.name, team
+    .info
+      %p
+        = link_to 'Edit Team Details', edit_team_path(team)
+        - if team.public
+          |
+          Public List
+        - if team.shareable
+          |
+          Shareable List
+    .description
+      %p= team.description.truncate(300, seperator: ' ')
+    .teammates
+      %p
+        %strong Teammates:
+        = team.teammates.map(&:name).join(', ')
+
+
+

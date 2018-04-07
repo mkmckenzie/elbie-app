@@ -1,0 +1,44 @@
+= form_with(model: teammate, local: true) do |form|
+  - if teammate.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(teammate.errors.count, "error")
+        prohibited this teammate from being saved:
+      %ul
+        - teammate.errors.full_messages.each do |message|
+          %li= message
+  .form-group.row
+    = form.label :name, class: 'col-4'
+    = form.text_field :name, id: :teammate_name, class: 'form-control col-8'
+  .form-group.row
+    = form.label :email_address, class: 'col-4'
+    = form.text_field :email_address, id: :teammate_email_address, class: 'form-control col-8'
+  .form-group.row
+    = form.label :primary_phone, class: 'col-4'
+    = form.text_field :primary_phone, id: :teammate_primary_phone, class: 'form-control col-8'
+  .form-group.row
+    = form.label :secondary_phone, class: 'col-4'
+    = form.text_field :secondary_phone, id: :teammate_secondary_phone, class: 'form-control col-8'
+  .form-group.row
+    = form.label :website, class: 'col-4'
+    = form.text_field :website, id: :teammate_website, class: 'form-control col-8'
+  .form-group.row
+    = form.label :instagram_handle, class: 'col-4'
+    = form.text_field :instagram_handle, id: :teammate_instagram_handle, class: 'form-control col-8'
+  .form-group.row
+    = form.label :visit_count, class: 'col-4'
+    = form.number_field :visit_count, id: :teammate_visit_count, class: 'form-control col-8'
+  .form-group.row
+    = form.label :venmo_handle, class: 'col-4'
+    = form.text_field :venmo_handle, id: :teammate_venmo_handle, class: 'form-control col-8'
+  .form-group.row
+    = form.label :facebook_page, class: 'col-4'
+    = form.text_field :facebook_page, id: :teammate_facebook_page, class: 'form-control col-8'
+  .form-group.row
+    = form.label :claimed_flag, class: 'col-4'
+    = form.number_field :claimed_flag, id: :teammate_claimed_flag, class: 'form-contrl.col-8'
+  .form-group.row
+    = form.label :brand_summary, class: 'col-4'
+    = form.text_area :brand_summary, id: :teammate_brand_summary, class: 'form-control col-8'
+  .form-group.actions
+    = form.submit "Submit", class: 'btn btn-primary'

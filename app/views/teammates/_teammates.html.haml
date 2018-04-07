@@ -1,0 +1,40 @@
+- team ||= nil
+- teammates.each do |teammate|
+  .teammate.p-2.my-2.border.border-primary
+    .name
+      %h5= link_to teammate.name, teammate
+    .contact
+      %p
+        %span= teammate.email_address || 'No Email'
+        |
+        %span= teammate.primary_phone || 'No Primary Phone'
+        |
+        %span= teammate.secondary_phone || 'No Secondary Phone'
+    .visited-count
+      %p= "You have visited #{teammate.name} #{teammate.visit_count || 0} times."
+    .brand-summary
+      %p= teammate.brand_summary || 'No Brand Summary'
+    .social
+      %p
+        %strong 
+          Website: 
+        %span= teammate.website || "http://www.#{teammate.name.tr(' ', '')}.com/"
+        |
+        %strong 
+          Instagram: 
+        %span= teammate.instagram_handle || '@no-instagram'
+        |
+        %strong 
+          Venmo: 
+        %span= teammate.venmo_handle || '@no-venmo'
+        |
+        %strong 
+          Facebook: 
+        %span= teammate.facebook_page || 'Facebook.com/no'
+    .crud
+      - if user_can_edit_teammate(teammate, current_user)
+        = link_to 'Edit', edit_teammate_path(teammate)
+      - if team.present?
+        |
+        = link_to 'Remove from Team', detach_teammate_team_path(team.id, remove_teammate_ids: [teammate.id]), data: { confirm: "Are you sure you want to remove #{teammate.name} from #{team.name}?" }
+= link_to 'New Teammate', new_teammate_path

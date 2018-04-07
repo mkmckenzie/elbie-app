@@ -1,0 +1,20 @@
+= link_to "<< My Teams", teams_path
+%p#notice= notice
+%h2= @team.name
+.info
+  %p
+    = link_to 'Edit Team Details', edit_team_path(@team)
+    - if @team.public
+      |
+      Public List
+    - if @team.shareable
+      |
+      Shareable List
+
+%p
+  %strong Description:
+  = @team.description
+
+%h3 Teammates
+.teammates
+  = render partial: 'teammates/teammates', locals: { teammates: @teammates, team: @team }

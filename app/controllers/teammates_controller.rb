@@ -4,7 +4,8 @@ class TeammatesController < ApplicationController
   # GET /teammates
   # GET /teammates.json
   def index
-    @teammates = Teammate.all
+    teammate_ids = current_user.teams.map(&:teammates).map(&:ids).flatten.uniq
+    @teammates = Teammate.where(id: teammate_ids)
   end
 
   # GET /teammates/1

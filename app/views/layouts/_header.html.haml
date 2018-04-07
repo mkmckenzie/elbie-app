@@ -3,6 +3,9 @@
   %button.navbar-toggler{"aria-controls" => "mainNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#mainNav", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   .navbar-collapse.justify-content-end.collapse{ id: 'mainNav' }
+    .navbar-nav.squad
+      - if user_signed_in?
+        = link_to 'My Teams', teams_path, class: 'nav-items nav-link'
     .navbar-nav.profile-management-links
       - if user_signed_in?
         = link_to 'Edit Profile', edit_user_registration_path, class: 'nav-item nav-link'
