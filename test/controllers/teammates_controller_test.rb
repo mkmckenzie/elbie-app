@@ -17,7 +17,7 @@ class TeammatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create teammate" do
     assert_difference('Teammate.count') do
-      post teammates_url, params: { teammate: { b: @teammate.b, brand_summary: @teammate.brand_summary, claimed_flag: @teammate.claimed_flag, facebook_page: @teammate.facebook_page, instagram_handle: @teammate.instagram_handle, name: @teammate.name, primary_phone: @teammate.primary_phone, secondary_phone: @teammate.secondary_phone, venmo_handle: @teammate.venmo_handle, visit_count: @teammate.visit_count, website: @teammate.website } }
+      post teammates_url, params: { teammate: { email_address: @teammate.email_address, brand_summary: @teammate.brand_summary, claimed_flag: @teammate.claimed_flag, facebook_page: @teammate.facebook_page, instagram_handle: @teammate.instagram_handle, name: @teammate.name, primary_phone: @teammate.primary_phone, secondary_phone: @teammate.secondary_phone, venmo_handle: @teammate.venmo_handle, visit_count: @teammate.visit_count, website: @teammate.website } }
     end
 
     assert_redirected_to teammate_url(Teammate.last)
@@ -34,7 +34,7 @@ class TeammatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update teammate" do
-    patch teammate_url(@teammate), params: { teammate: { b: @teammate.b, brand_summary: @teammate.brand_summary, claimed_flag: @teammate.claimed_flag, facebook_page: @teammate.facebook_page, instagram_handle: @teammate.instagram_handle, name: @teammate.name, primary_phone: @teammate.primary_phone, secondary_phone: @teammate.secondary_phone, venmo_handle: @teammate.venmo_handle, visit_count: @teammate.visit_count, website: @teammate.website } }
+    patch teammate_url(@teammate), params: { teammate: { email_address: @teammate.email_address, brand_summary: @teammate.brand_summary, claimed_flag: @teammate.claimed_flag, facebook_page: @teammate.facebook_page, instagram_handle: @teammate.instagram_handle, name: @teammate.name, primary_phone: @teammate.primary_phone, secondary_phone: @teammate.secondary_phone, venmo_handle: @teammate.venmo_handle, visit_count: @teammate.visit_count, website: @teammate.website } }
     assert_redirected_to teammate_url(@teammate)
   end
 

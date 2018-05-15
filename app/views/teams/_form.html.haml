@@ -14,15 +14,11 @@
     = form.label :description
     = form.text_area :description, id: :team_description, class: 'form-control'
   .form-group
-    = form.label :public
-    = form.number_field :public, id: :team_public, class: 'form-control'
-  .form-group
-    = form.label :shareable
-    = form.number_field :shareable, id: :team_shareable, class: 'form-control'
-    = form.collection_check_boxes(:keep_teammate_ids, team.teammates.all, :id, :name) do |b|
-      .form-check
-        = b.check_box(checked: true, class: "form-check-input")
-        = b.label(class: "form-check-label") 
-    = team.teammates.count
+    .form-check.form-check-inline
+      = form.check_box :public, id: :team_public, class: 'form-check-input'
+      = form.label :public, class: 'form-check-label', for: 'team_public'
+    .form-check.form-check-inline
+      = form.check_box :shareable, id: :team_shareable, class: 'form-check-input'
+      = form.label :shareable, class: 'form-check-label', for: 'team_public'
   .actions
     = form.submit 'Submit', class: 'btn btn-primary'

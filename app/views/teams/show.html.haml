@@ -4,15 +4,15 @@
 .info
   %p
     = link_to 'Edit Team Details', edit_team_path(@team)
-    - if @team.public
+    - if @team.public?
       |
       Public List
-    - if @team.shareable
+    - if @team.shareable?
       |
       Shareable List
 
 %p
-  %strong Description:
+  %strong= "About #{@team.name}:"
   = @team.description
 
 %h3 Teammates
